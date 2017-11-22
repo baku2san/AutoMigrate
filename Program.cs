@@ -22,11 +22,17 @@ namespace AutoMigrator
                 mig.ExecuteMigrationCommand();
                 Console.WriteLine("finished.");
                 Console.ReadKey();
+                
+
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
             }
         }
+        // table name が複数形に勝手になる場合の対処法
+        // 但し、英語以外の言語の場合辞書を作成する必要があるみたい。特に気にする必要もなさそうｗ
+        // System.Data.Entity.Design.PluralizationServices.PluralizationService.CreateService(new CultureInfo("en-US")).Pluralize(value);
+
     }
 }
